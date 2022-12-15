@@ -1,4 +1,4 @@
-# exercise-vue-8018
+# pokemon-app
 
 ## Project setup
 ```
