@@ -1,0 +1,96 @@
+$color-venues-separator: #e3e3e3;
+$color-tips-owner-name: #fff;
+
+.venue-detail {
+	float: left;
+	width: 600px;
+	margin: 40px 0 42px 15px;
+
+	&-image {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		position: relative;
+		float: left;
+		width: 290px;
+		height: 290px;
+		margin-bottom: 20px;
+		overflow: hidden;
+		background-image: url('../../../assets/images/background.png');
+		background-size: cover;
+		cursor: pointer;
+		transition: box-shadow 500ms cubic-bezier(0.185, 0.54, 0.355, 1);
+
+		&:nth-child(odd) {
+			margin-right: 20px;
+		}
+
+		&-overlay {
+			display: none;
+			position: absolute;
+			top: 0;
+			width: 290px;
+			height: 290px;
+			background-color: rgba(18, 25, 95, 0.5);
+		}
+
+		&:hover {
+			box-shadow: 0 0 34px 0 rgba(0, 0, 0, 0.32);
+
+			.venue-detail-image-overlay {
+				display: initial;
+			}
+		}
+
+		&.venue-detail-owner {
+			background-color: rgba(18, 25, 95, 0.5);
+
+			&:hover {
+				.avatar,
+				span {
+					display: initial;
+				}
+			}
+
+			.avatar {
+				display: none;
+				position: relative;
+				margin-bottom: 21px;
+				z-index: 2;
+
+				&-overlay {
+					position: relative;
+					display: inline-block;
+					width: 40px;
+					height: 40px;
+					transform: rotate(-45deg);
+					overflow: hidden;
+
+					img {
+						position: absolute;
+						width: 150%;
+						height: 150%;
+						top: -10px;
+						left: -10px;
+						transform: rotate(45deg);
+					}
+				}
+			}
+
+			span {
+				display: none;
+				position: relative;
+				font-family: 'Gotham-Medium';
+				font-size: 14px;
+				color: $color-tips-owner-name;
+				z-index: 2;
+			}
+		}
+	}
+}
+
+hr {
+	margin: 0;
+	border: 1px solid $color-venues-separator;
+}

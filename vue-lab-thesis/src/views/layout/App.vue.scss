@@ -1,0 +1,39 @@
+@import '../../assets/styles/resets/reset.css';
+@import '../../assets/styles/resets/super-form-reset.css';
+@import '../../assets/styles/_fonts.scss';
+
+html,
+body {
+	height: 100%;
+}
+
+.container {
+	display: block;
+	width: 960px;
+	margin: 0 auto;
+}
+
+.group::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition-property: opacity;
+	transition-duration: 0.25s;
+}
+
+.fade-enter-active {
+	transition-delay: 0.25s;
+}
+
+.fade-enter,
+.fade-leave-active {
+	opacity: 0;
+}
+
+#app {
+	height: 100%;
+}

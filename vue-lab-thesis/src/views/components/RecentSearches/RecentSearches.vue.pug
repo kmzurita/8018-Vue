@@ -1,0 +1,8 @@
+section(class="recent-searches")
+	h2 RECENT SEARCHES
+	hr
+	div
+		ul
+			template(v-for="recentSearch in reverseRecentSearches")
+				a(@click="fetchVenues(recentSearch.location, recentSearch.query)")
+					li {{ recentSearch.query }} in {{ recentSearch.location }}

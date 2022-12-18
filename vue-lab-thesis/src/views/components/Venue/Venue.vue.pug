@@ -1,0 +1,15 @@
+router-link(:to="{ path: '/venues/detail', query: { id: venue.venue.id } }" class="venue" :style="{ 'background-image': 'url(' + getFeaturedPhoto + ')' }")
+	div(class="info")
+		h3(:title="venue.venue.name") {{ venue.venue.name }}
+		hr
+		div(class="info-bottom")
+			div(class="people")
+				svg(xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10")
+					g(fill="#FFF" fill-rule="evenodd")
+						circle(cx="4.688" cy="2.188" r="2.188")
+						path(d="M4.788 8.891c2.494 0 4.245 2.495 4.245 0a4.516 4.516 0 0 0-9.033 0c0 2.495 2.293 0 4.788 0z")
+				span {{ venue.venue.stats.checkinsCount }}
+			PriceIndicator(:price="venue.venue.price")
+			div(class="rating")
+				span {{ ratingControl(venue.venue) }}
+	div(class="venue-overlay")
